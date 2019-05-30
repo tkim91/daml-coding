@@ -1,0 +1,24 @@
+16:35:14.956 [sandbox-akka.actor.default-dispatcher-16] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+16:35:15.146 [sandbox-akka.actor.default-dispatcher-16] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+16:35:25.123 [sandbox-akka.actor.default-dispatcher-16] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+16:35:25.132 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.12.19 with ledger-id = sandbox-4b096257-4b67-4121-a264-c0431a50aa04, port = 6865, dar file = DamlPackageContainer(List(target\daml\iou.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+16:42:12.704 [Thread-3] INFO  c.d.p.s.s.c.ReferenceCommandService - Shutting down Command Service 
+16:42:12.709 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+16:42:31.770 [sandbox-akka.actor.default-dispatcher-25] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+16:42:31.929 [sandbox-akka.actor.default-dispatcher-25] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+16:42:41.738 [sandbox-akka.actor.default-dispatcher-25] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+16:42:41.747 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.12.19 with ledger-id = sandbox-d615d66a-8454-4428-b49b-da3fd2d8cfee, port = 6865, dar file = DamlPackageContainer(List(target\daml\iou.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+16:45:51.410 [Thread-3] INFO  c.d.p.s.s.c.ReferenceCommandService - Shutting down Command Service 
+16:45:51.411 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+16:46:10.601 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+16:46:10.764 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+16:46:20.703 [sandbox-akka.actor.default-dispatcher-13] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+16:46:20.712 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.12.19 with ledger-id = sandbox-1af9bd95-e457-4353-ac0c-4f597bcbe52a, port = 6865, dar file = DamlPackageContainer(List(target\daml\iou.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+16:50:13.489 [Thread-3] INFO  c.d.p.s.s.c.ReferenceCommandService - Shutting down Command Service 
+16:50:13.494 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
+16:04:53.858 [sandbox-akka.actor.default-dispatcher-8] INFO  c.d.l.server.apiserver.ApiServices$ - DAML LF Engine supports LF versions: 0, 0.dev, 1.0, 1.1, 1.2, 1.3, 1.4, 1.dev; Transaction versions: 1, 2, 3, 4, 5, 6, 7; Value versions: 1, 2, 3, 4 
+16:04:54.070 [sandbox-akka.actor.default-dispatcher-8] INFO  c.d.l.s.apiserver.LedgerApiServer - Starting plainText server 
+16:05:03.988 [sandbox-akka.actor.default-dispatcher-8] INFO  c.d.l.s.apiserver.LedgerApiServer - listening on localhost:6865 
+16:05:03.997 [main] INFO  c.d.platform.sandbox.SandboxServer$ - Initialized sandbox version 100.12.19 with ledger-id = sandbox-3f9cc122-3b12-4aa4-ada7-f3e0db913aa6, port = 6865, dar file = DamlPackageContainer(List(.\target\daml\iou.dar)), time mode = Static, ledger = in-memory, daml-engine = {} 
+16:45:19.867 [Thread-3] INFO  c.d.p.s.s.c.ReferenceCommandService - Shutting down Command Service 
+16:45:19.874 [Thread-3] INFO  c.d.p.s.services.command.TrackerMap - Shutting down 0 trackers 
