@@ -4,36 +4,66 @@
 daml 1.2
 module Main where
 
-import Iou
-import IouTrade()
+import Payments
+import MedicalHistory
 
 setup = scenario do
-  alice <- getParty "Alice"
-  bob <- getParty "Bob"
-  usBank <- getParty "USD_Bank"
-  eurBank <- getParty "EUR_Bank"
+  frank <- getParty "Frank"
+  doctor <- getParty "Dr_Kim"
+  insurance <- getParty "Aetna"
+  hospital <- getParty "Princeton_Plainsboro_Hospital"
+  pharmacy <- getParty "CVS"
 
-  -- Banks issue Iou transfers
-  iouTransferAliceCid <- submit eurBank do
-    iouCid <- create Iou with
-      issuer = eurBank
-      owner = eurBank
-      currency = "EUR"
-      amount = 100.0
-      observers = []
-    exercise iouCid Iou_Transfer with newOwner = alice
-
-  iouTransferBobCid <- submit usBank do
-    iouCid <- create Iou with
-      issuer = usBank
-      owner = usBank
+  -- Doctor issues a payment for a patient after checkup
+  paymentDoctorCid <- submit doctor do
+    paymentCid <- create Payment with
+      date = "2018-07-11"
+      time = "09:30am"
       currency = "USD"
-      amount = 110.0
+      oop = 25.00
+      total = 150.00
+      service = "Emergency check up"
+      insurance = insurance
+      medical = doctor
       observers = []
-    exercise iouCid Iou_Transfer with newOwner = bob
+    exercise paymentCid Payment_AddObserver with newObserver = frank
 
-  -- Bob and Alice accept
-  submit alice do
-    exercise iouTransferAliceCid IouTransfer_Accept
-  submit bob do
-    exercise iouTransferBobCid IouTransfer_Accept
+  medicalHistoryFrankCid <- submit doctor do
+    medicalHistoryCid <- create MedicalHistory with
+      date = "2018-07-11"
+      time = "09:30am"
+      medication = "Amoxicillin"
+      prognosis = "Strep throat"
+      procedures = "Antibiotics 2x a day for 1 week"
+      patient = frank
+      medical = doctor
+      observers = []
+    exercise medicalHistoryCid MedicalHistory_AddObserver with newObserver = pharmacy
+
+  -- Pharmacy issues payment for medication purchased
+  paymentPharmacyCid <- submit pharmacy do
+    paymentCid <- create Payment with
+      date = "2018-07-11"
+      time = "10:02am"
+      currency = "USD"
+      oop = 10.00
+      total = 124.00
+      service = "Rx pickup: Amoxicillin"
+      insurance = insurance
+      medical = pharmacy
+      observers = []
+    exercise paymentCid Payment_AddObserver with newObserver = doctor
+
+  -- Hospital issues a payment for procedure done on patient
+  paymentHospitalCid <- submit hospital do
+    paymentCid <- create Payment with
+      date = "2017-05-21"
+      time = "11:43am"
+      currency = "USD"
+      oop = 175.25
+      total = 1325.44
+      service = "MRI"
+      insurance = insurance
+      medical = hospital
+      observers = []
+  exercise paymentCid Payment_AddObserver with newObserver = doctor

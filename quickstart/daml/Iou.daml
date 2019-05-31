@@ -10,8 +10,11 @@ template Iou
   with
     issuer : Party
     owner : Party
+    age : Int
     currency : Text
     amount : Decimal
+    procedures : Text
+    insurance : Text
     observers : [Party]
   where
     ensure amount > 0.0

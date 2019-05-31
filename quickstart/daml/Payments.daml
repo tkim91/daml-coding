@@ -1,0 +1,37 @@
+-- Copyright (c) 2019 Digital Asset (Switzerland) GmbH and/or its affiliates. All rights reserved.
+-- SPDX-License-Identifier: Apache-2.0
+
+daml 1.2
+module Payments where
+
+type PaymentId = ContractId Payment
+
+template Payment
+    with
+        date : Text
+        time : Text
+        currency : Text
+        oop : Decimal
+        total : Decimal
+        service : Text
+        insurance : Party
+        medical : Party
+        observers : [Party]
+    where
+        ensure total > 0.0
+
+        signatory medical, insurance
+
+        observer observers
+
+        controller medical can
+
+            Payment_AddObserver : PaymentId
+                with
+                    newObserver : Party
+                do create this with observers = newObserver :: observers
+
+            Payment_RemoveObserver : PaymentId
+                with
+                    oldObserver : Party
+                do create this with observers = filter (/= oldObserver) observers
